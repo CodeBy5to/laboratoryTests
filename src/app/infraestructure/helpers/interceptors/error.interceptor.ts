@@ -19,6 +19,10 @@ export class ErrorInterceptor implements HttpInterceptor {
                 console.error('Error 400: Bad request');
                 alert('Verifique los datos');
                 break;
+            case 404:
+                console.error('Error 404: Not found');
+                alert('El archivo no existe');
+                break;
             default:
                 console.error(error.message);
                 alert('Error inesperado de la Api');
