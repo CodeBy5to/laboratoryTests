@@ -8,23 +8,49 @@ Se introducen algoritmos de cifrado y hash así como tambien consumo de Apis y m
 
 ## Vistas y funcionalidades
 
-### Lista de Pokémon
+### Pokemon-dashboard
 
-Obtiene y muestra una lista de Pokémon utilizando la PokeAPI. A medida que se desplaza hacia abajo, se cargan más Pokémon automáticamente mediante scroll infinito.
+Obtiene y muestra una lista de Pokémon utilizando la PokeAPI. A medida que se desplaza hacia abajo, se cargan más Pokémon automáticamente.
+Implementa un scroll infinito para cargar más Pokémon a medida que el usuario se desplaza hacia abajo en la lista. 
+Utiliza la biblioteca `ngx-infinite-scroll` para gestionar la carga de datos adicional sin recargar la página.
 
-![Lista de Pokémon](path/to/pokemon-list.gif) <!-- GIF showing Pokémon list -->
+![2](https://github.com/user-attachments/assets/35fc7744-2c8b-48fc-9d31-4e7b92e7239c)
 
-### Infinite Scroll
-
-Implementa un scroll infinito para cargar más Pokémon a medida que el usuario se desplaza hacia abajo en la lista. Utiliza la biblioteca `ngx-infinite-scroll` para gestionar la carga de datos adicional sin recargar la página.
-
-![Infinite Scroll](path/to/infinite-scroll.gif) <!-- GIF showing infinite scroll in action -->
-
-### Skeleton UI
 
 Muestra una interfaz de usuario esquelética mientras se cargan los datos de la PokeAPI. El diseño esquelético proporciona una vista preliminar de la estructura de la página, mejorando la experiencia visual durante el tiempo de carga.
+Uso de animaciones en css para el skeleton y el scroll
 
-![Skeleton UI](path/to/skeleton-ui.gif) <!-- GIF showing skeleton UI -->
+- **Pulse**: esta animación es la que nos dará el efecto del skeleton
+```css
+@keyframes pulse {
+  0% {
+    background-color: var(--bg-item-hex);
+  }
+  50% {
+    background-color: var(--bg-skeleton);
+  }
+  100% {
+    background-color: var(--bg-item-hex);
+  }
+}
+```
+- **show**: esta animación es la que nos dará el efecto del scroll
+
+```css
+@keyframes show {
+  from {
+    opacity: 0; scale: 10%;
+  }
+  to {
+    opacity: 1; scale: 100%;
+  }
+}
+```
+
+
+![1](https://github.com/user-attachments/assets/ecc9ffd8-02e2-457f-ba35-d5a26f4d5a92)
+
+
 
 ### Arquitectura Hexagonal
 
