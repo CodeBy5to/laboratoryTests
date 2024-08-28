@@ -1,0 +1,11 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+
+:root {
+    --bs-body-font-weight: 200;
+    --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+
+body { margin: 0; font-family: var(--bs-font-sans-serif);  background-color: #212529; color: white; font-weight: var(--bs-body-font-weight);}

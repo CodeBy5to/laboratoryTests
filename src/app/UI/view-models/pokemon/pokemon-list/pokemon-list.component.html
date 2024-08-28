@@ -1,0 +1,55 @@
+
+<div class="container text-center">
+  <div class="row">
+    <div class="col-3 bg-primary-custom">
+
+      <div class="pokemon-list" 
+      infiniteScroll
+      [infiniteScrollDistance]="2"
+      [infiniteScrollUpDistance]="2"
+      [infiniteScrollThrottle]="500"
+      (scrolled)="onScroll()">
+
+        <div [ngClass]="{'pokemon-item-selected': pokemonSelected == pokemon}"
+        *ngFor="let pokemon of pokemons" class="pokemon-item pokemon-item-animation" (click)="selectPokemon(pokemon)">
+           
+          <img [ngClass]="{'pokemon-img-selected': pokemonSelected == pokemon}" src="{{pokemon?.imageUrl}}" alt="" class="pokemon-img">
+
+         </div> 
+ 
+         <ng-container *ngIf="isLoading">
+
+          <div *ngFor="let number of [].constructor(4)" class="pokemon-skeleton pokemon-item-animation">
+            <div class="skeleton-imagen skeleton-pulse-animation"></div>
+           </div> 
+
+         </ng-container>
+
+      </div>
+    
+    </div>
+    <div class="col-9 position-fixed">
+
+      <div class="row pokemon-desc-container">
+
+        <h2 class="text-start">Laboratory Test</h2>
+        <h5 class="text-start">{{pokemonSelected?.name}}</h5>
+        <div class="mt-2">
+          <p *ngFor="let stat of pokemonSelected?.stats" class="text-start  mb-0" >{{stat.name}}: {{stat.value}}</p>
+        </div>
+
+        <h5 class="text-start mt-2" *ngIf="pokemonSelected">Abilities</h5>
+
+        <div class="mt-2">
+          <p *ngFor="let abilitie of pokemonSelected?.abilities" class="text-start  mb-0" >{{abilitie.name}}</p>
+        </div>
+        
+      </div>
+
+
+    </div>
+  </div>
+</div>
+
+
+

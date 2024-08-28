@@ -1,0 +1,20 @@
+
+
+<div class="hash-container mt-4">
+    <div class="input-group mb-3">
+        <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">{{cryptTypeSelected.name}}</button>
+        <ul class="dropdown-menu">
+          <li *ngFor="let type of cryptTypes" (click)="selectCryptType(type)"><a class="dropdown-item">{{type.name}}</a></li>
+        </ul> 
+        <input type="text" class="form-control dark-input" aria-label="Input text del texto a cifrar" [(ngModel)]="text" id="text">
+        <button class="btn btn-outline-secondary" type="button" id="button-addon1" (click)="generateHash()">Generar</button>
+    
+      </div>
+
+
+      <div class="result-container">{{result}}</div>
+</div>
+
+
+  
+  

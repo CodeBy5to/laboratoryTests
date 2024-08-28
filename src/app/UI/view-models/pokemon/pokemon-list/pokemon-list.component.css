@@ -1,0 +1,107 @@
+:host {
+  display: block;
+  --bd-violet-hex: #2d2648;
+  --border-violet-hex: #41287d;
+  --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+  --border-selected-hex: #6347a6;
+  --bg-item-hex: #26203d;
+  --bg-skeleton: #443a6d;
+}
+
+
+@keyframes pulse {
+  0% {
+    background-color: var(--bg-item-hex);
+  }
+  50% {
+    background-color: var(--bg-skeleton);
+  }
+  100% {
+    background-color: var(--bg-item-hex);
+  }
+}
+
+@keyframes show {
+  from {
+    opacity: 0; scale: 10%;
+  }
+  to {
+    opacity: 1; scale: 100%;
+  }
+}
+
+
+
+.bg-primary-custom {
+  background-color: var(--bd-violet-hex);
+  border: 1px solid var(--border-violet-hex);
+}
+
+.pokemon-list {
+  display: grid;
+  place-content: center;
+  padding-block: 5em;
+}
+
+.pokemon-item {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 16px;
+  background-color: var(--bg-item-hex);
+  margin-top: .5em;
+}
+
+.pokemon-item-selected {
+  border: 3px solid var(--border-selected-hex);
+}
+
+.pokemon-item:hover {
+  background: var(--border-violet-hex);
+  cursor: pointer;
+}
+
+.pokemon-item-animation {
+  view-timeline-name: --reveal;
+  animation-name: show;
+  animation-fill-mode: both;
+  animation-timeline: --reveal;
+  animation-range: entry 25% cover 50%;
+}
+
+.pokemon-img {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+.pokemon-img-selected { 
+  filter: drop-shadow(2px 4px 6px var(--border-selected-hex));
+}
+
+.pokemon-skeleton {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 16px;
+  background-color: var(--bg-item-hex);
+  margin-top: .5em;
+}
+
+.skeleton-imagen {
+  object-fit: cover;
+  width: 250px;
+  height: 250px;
+  border-radius: 16px;
+}
+
+.skeleton-pulse-animation {
+  animation: pulse 1.5s infinite ease-in-out;
+}
+
+.pokemon-desc-container {
+  display: inline-flex;
+  width: 50%;
+}
+
